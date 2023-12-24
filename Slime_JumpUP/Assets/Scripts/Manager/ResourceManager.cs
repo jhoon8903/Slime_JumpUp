@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
 
 namespace Manager
 {
-    public class ResourceManager : MonoBehaviour
+    public class ResourceManager
     { 
         private Dictionary<string, Object> Resource { get; set; } = new();
 
@@ -74,7 +74,7 @@ namespace Manager
         public GameObject InstantiateObject(string key, Transform parent = null)
         {
             GameObject resource = Load<GameObject>($"{key}.prefab");
-            return Instantiate(resource, parent);
+            return Utility.InstantiateObject(resource, parent);
         }
     }
 }
