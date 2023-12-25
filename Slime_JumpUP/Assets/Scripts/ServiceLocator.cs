@@ -7,8 +7,8 @@ public static class ServiceLocator
 
     public static T GetService<T>() where T : class
     {
-        var serviceType = typeof(T);
-        if (Services.TryGetValue(serviceType, out var service))
+        Type serviceType = typeof(T);
+        if (Services.TryGetValue(serviceType, out object service))
         {
             return (T)service;
         }
@@ -17,7 +17,7 @@ public static class ServiceLocator
 
     private static T TryCreateService<T>(Type serviceType) where T : class
     {
-        var serviceInstance = Activator.CreateInstance<T>();
+        T serviceInstance = Activator.CreateInstance<T>();
         Services[serviceType] = serviceInstance;
         return serviceInstance;
     }

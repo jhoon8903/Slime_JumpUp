@@ -38,6 +38,12 @@ namespace Manager
             return Utility.GetAddComponent<T>(obj);
         }
 
+        public T InstantiateSceneUI<T>() where T : UIBase
+        {
+            string sceneUIName = typeof(T).Name;
+            return InstantiateUI<T>(sceneUIName, BaseUI.transform);
+        }
+
         public T OpenPopup<T>(string uiName) where T : Popup
         {
             string ui = NameOfUI<T>(uiName);
