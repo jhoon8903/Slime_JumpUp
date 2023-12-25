@@ -13,6 +13,10 @@ namespace Manager
     public class ResourceManager
     { 
         private Dictionary<string, Object> Resource { get; set; } = new();
+        public bool Preload { get; set; }
+        public bool IntroSceneLoad { get; set; }
+        public bool GameSceneLoad { get; set; }
+        public bool LoadingSceneLoad { get; set; }
 
         public void AddResource(string key, Object resource)
         {
