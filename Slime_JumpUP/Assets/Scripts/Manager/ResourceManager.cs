@@ -75,10 +75,10 @@ namespace Manager
             throw new KeyNotFoundException($"Not Found Key : {key}");
         }
 
-        public GameObject InstantiateObject(string key, Transform parent = null)
+        public GameObject InstantiateObject(string key, Transform parent = null, bool pooling = false)
         {
             GameObject resource = Load<GameObject>($"{key}.prefab");
-            return Utility.InstantiateObject(resource, parent);
+            return pooling ? ServiceLocator.GetService<PoolManager>().Pop(resource) : Utility.InstantiateObject(resource, parent);
         }
     }
 }

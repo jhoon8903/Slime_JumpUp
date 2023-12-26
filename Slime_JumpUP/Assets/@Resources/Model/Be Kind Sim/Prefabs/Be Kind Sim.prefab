@@ -1826,7 +1826,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -2009,7 +2009,7 @@ Transform:
   - {fileID: 4984137832881936}
   - {fileID: 4941497025627318}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95792339774633994
 Animator:
