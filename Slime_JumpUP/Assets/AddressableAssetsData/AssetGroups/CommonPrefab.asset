@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: CommonPrefab
+  m_EditorClassIdentifier: 
+  m_GroupName: CommonPrefab
+  m_Data:
+    m_SerializedData: []
+  m_GUID: fe7977d7d05e94e629dd95d39da2b428
+  m_SerializeEntries:
+  - m_GUID: 896413d3c3c98425488bcc02263788f8
+    m_Address: EventSystem.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de246db4a5ae542138064efce50f0998
+    m_Address: Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c359ae3f79fc44d0ea795b96d8aab34e
+    m_Address: ResolutionController.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5a9f1c2e0acca496cbd2d014ad327ec0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ab5b84a7e0dde4ecca6e68de6cc62a48, type: 2}
+    - {fileID: 11400000, guid: 3afaa029c77ac4be7997bdc4030f82a8, type: 2}

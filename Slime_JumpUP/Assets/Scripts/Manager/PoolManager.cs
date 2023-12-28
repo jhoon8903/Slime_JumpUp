@@ -10,7 +10,10 @@ namespace Manager
 
         public GameObject Pop(GameObject prefab)
         {
-            if (!_pools.ContainsKey(prefab.name)) CreatePool(prefab);
+            if (!_pools.ContainsKey(prefab.name))
+            {
+                CreatePool(prefab);
+            }
             return _pools[prefab.name].Pop();
         }
 

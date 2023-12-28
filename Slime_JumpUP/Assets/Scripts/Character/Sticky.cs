@@ -1,35 +1,38 @@
-using System;
-using System.Collections.Generic;
-using Obstacles;
 using UnityEngine;
 
 namespace Character
 {
     public class Sticky : MonoBehaviour
     {
-        private static int _stickyCount;
-        private SpringJoint _joint;
-        public event Action ExitObstacle;
+        private int _stickyCount;
+        private FixedJoint _joint;
 
-        private void StickyObstacle(GameObject obstacleGameObject)
+        private void StickyObstacle(Collision obstacle)
         {
+            ContactPoint contactPoint = obstacle.contacts[0];
+            Vector3 collisionPoint = contactPoint.point;
+            transform.position = new Vector3(collisionPoint.x, collisionPoint.y, 0);
+
             if (_joint == null)
             {
-                _joint = gameObject.AddComponent<SpringJoint>();
-                _joint.spring = 500000;
-                _joint.damper = 0;
-                _joint.maxDistance = 0.1f;
+                _joint = gameObject.AddComponent<FixedJoint>();
+                _joint.breakTorque = Mathf.Infinity;
+                _joint.breakForce = Mathf.Infinity;
+                _joint.connectedBody = obstacle.rigidbody;
             }
-            _joint.connectedBody = obstacleGameObject.GetComponent<Rigidbody>();
         }
 
-        private void OnTriggerEnter(Collider obstacle)
+        private void OnCollisionEnter(Collision obstacle)
         {    
-            Obstacle obj = obstacle.GetComponent<Obstacle>();
-            if (obstacle.CompareTag("Obstacle") && obj != null && _stickyCount <1)
+            if (obstacle.gameObject.CompareTag("Obstacle") && _stickyCount < 1)
             {
                 _stickyCount++;
-                StickyObstacle(obstacle.gameObject);
+                StickyObstacle(obstacle);
+            }
+
+            if (obstacle.gameObject.CompareTag("Banana"))
+            {
+
             }
         }
 

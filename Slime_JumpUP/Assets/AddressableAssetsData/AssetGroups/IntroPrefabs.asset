@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: IntroPrefabs
+  m_EditorClassIdentifier: 
+  m_GroupName: IntroPrefabs
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 94057420417b6464ba2dce3164f722e3
+  m_SerializeEntries:
+  - m_GUID: ad1013bd79336424da874c065f72995f
+    m_Address: IntroBackground.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49177f7eea6c44c7eaf858103d506805
+    m_Address: Intro_UI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3bf5983646586400cbcd0a13d91c8c13
+    m_Address: Sky.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5a9f1c2e0acca496cbd2d014ad327ec0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: cd38aa25b44c64c87a70bbd7107fbb23, type: 2}
+    - {fileID: 11400000, guid: e3cba9555059d47dbb65f66a338179a1, type: 2}

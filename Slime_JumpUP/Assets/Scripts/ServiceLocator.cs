@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class ServiceLocator
 {
@@ -14,10 +15,10 @@ public static class ServiceLocator
         }
         return TryCreateService<T>(serviceType);
     }
-
     private static T TryCreateService<T>(Type serviceType) where T : class
     {
-        T serviceInstance = Activator.CreateInstance<T>();
+        T serviceInstance = Activator.CreateInstance<T>(); 
+        Debug.Log($"Instantiate : {serviceInstance}");
         Services[serviceType] = serviceInstance;
         return serviceInstance;
     }

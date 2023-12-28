@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: GamePrefabs
+  m_EditorClassIdentifier: 
+  m_GroupName: GamePrefabs
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b8347fe90ca8a4339992bd984b5f8645
+  m_SerializeEntries:
+  - m_GUID: 5d864970d93904920b8f6167f77e2b61
+    m_Address: Floor.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3a4ea874049e4079b9e2eaf220b0545
+    m_Address: GameBackground.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c4ecaa86742804b0f99e315f6487b953
+    m_Address: Virtual_Camera.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4111d51a13d0c44b781cc2164ed316c4
+    m_Address: Game_UI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5a9f1c2e0acca496cbd2d014ad327ec0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 74dd299163b374e16ab16043cab9f6b5, type: 2}
+    - {fileID: 11400000, guid: faab94a51312341348452044a70120f7, type: 2}

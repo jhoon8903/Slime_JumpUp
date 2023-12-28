@@ -1,3 +1,4 @@
+using Events;
 using UnityEngine;
 
 namespace Character
@@ -5,10 +6,12 @@ namespace Character
     public class CharacterSpawner : MonoBehaviour
     {
         private Character _character;
+        private CharacterEventHandler _characterEventHandler;
         private void Start()
         {
             _character = GetComponent<Character>();
-            _character.CharacterRespawn += Respawn;
+            _characterEventHandler = ServiceLocator.GetService<CharacterEventHandler>();
+             _characterEventHandler.CharacterRespawn+= Respawn;
         }
 
         private void Respawn()

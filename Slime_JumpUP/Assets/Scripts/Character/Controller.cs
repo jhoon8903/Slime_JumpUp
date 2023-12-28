@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -5,7 +6,7 @@ namespace Character
 {
     public class Controller : MonoBehaviour
     {
-        private const float LaunchAddForce = 20f;
+        private const float LaunchAddForce = 15f;
         private Camera _mainCamera;
         private Vector2 _dragStartPosition;
         private bool _isDragging = false;

@@ -16,29 +16,10 @@ namespace Manager
         public bool Preload { get; set; }
         public bool IntroSceneLoad { get; set; }
         public bool GameSceneLoad { get; set; }
-        public bool LoadingSceneLoad { get; set; }
 
         public void AddResource(string key, Object resource)
         {
             Resource.TryAdd(key, resource);
-        }
-
-        public void LoadResource<T>(string key, Action<T> callback = null) where T : Object
-        {
-            try
-            {
-                T loadedResource = Load<T>(key);
-                callback?.Invoke(loadedResource);
-            }
-            catch (KeyNotFoundException)
-            {
-                IResourceLoader loader = GetLoader(key);
-                loader?.LoadResource<T>(key, obj =>
-                {
-                    Resource[key] = obj;
-                    callback?.Invoke(obj);
-                });
-            }
         }
 
         private IResourceLoader GetLoader(string key)
@@ -66,12 +47,19 @@ namespace Manager
             };
         }
 
-        private T Load<T>(string key) where T : Object
+        private void LoadResource<T>(string key, Action<T> callback = null) where T : Object
         {
-            if (Resource.TryGetValue(key, out Object resource))
+            IResourceLoader loader = GetLoader(key);
+            loader?.LoadResource<T>(key, obj =>
             {
-                return resource as T;
-            }
+                Resource[key] = obj;
+                callback?.Invoke(obj);
+            });
+        }
+
+        public T Load<T>(string key) where T : Object
+        {
+            if (Resource.TryGetValue(key, out Object resource)) return resource as T;
             throw new KeyNotFoundException($"Not Found Key : {key}");
         }
 

@@ -7,15 +7,15 @@ namespace Obstacles
 {
     public class Obstacle : MonoBehaviour
     {
-        private const float Delay = 3f;
+        protected float Delay;
         private Coroutine _deactivationCoroutine;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             _deactivationCoroutine = StartCoroutine(DeactivateAfterDelay());
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             if (_deactivationCoroutine == null) return;
             StopCoroutine(_deactivationCoroutine);

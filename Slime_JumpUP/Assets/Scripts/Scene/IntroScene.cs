@@ -1,48 +1,73 @@
 using System;
+using System.Collections;
 using Manager;
+using UI;
+using UI.Interface;
 using UI.IntroScene;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
 namespace Scene
 {
     public class IntroScene  : BaseScene
     {
-        private float _spawnDelay = 1f;
-        private float _lastSpawn;
+        private Intro_UI _introUI;
+        private const string Background = "IntroBackground";
+        private const string LabelString = "GameScene";
         protected override void Initialize()
         {
             base.Initialize();
             CurrentScene = Label.IntroScene;
+            InstantiatePlayer();
             InstantiateIntroUI();
-            InstantiateObject();
-
+            LoadResource();
+            BackGround.InstantiateBackGround(Background, Scenes.BaseObjects.transform);
         }
-
-        private void InstantiateObject()
+        private void InstantiatePlayer()
         {
-            Transform parent = scenesManager.BaseObjects.transform; 
-            resourceManager.InstantiateObject("IntroObject", parent);
+            Transform parent = Scenes.BaseObjects.transform; 
             Vector3 playerSpawnPosition = new Vector3(0, 4f, 0);
-            GameObject player = resourceManager.InstantiateObject("Player", parent);
+            GameObject player = Resource.InstantiateObject("Player", parent);
             player.transform.position = playerSpawnPosition;
         }
 
         private void InstantiateIntroUI()
-        {
-           uiManager.InstantiateSceneUI<Intro_UI>();
+        { 
+            _introUI = UI.InstantiateSceneUI<Intro_UI>(); 
         }
 
-        private void FixedUpdate()
-        {
-            _lastSpawn += Time.deltaTime;
-            if (!(_spawnDelay < _lastSpawn)) return;
-            InstantiateObstacle();
-            _lastSpawn = 0.0f;
+        private void LoadResource()
+        { 
+            Resource.AllLoadResource<Object>($"{LabelString}", (key, count, totalCount) =>
+            {
+                Debug.Log($"[{LabelString}] Load asset {key} ({count}/{totalCount})");
+                _introUI.UpdateToProgress(count, totalCount, key);
+                if (count < totalCount) return;
+                Resource.GameSceneLoad = true;
+            });
+            AsyncOperation operation = LoadAsync(LabelString);
+            StartCoroutine(GameSceneLoad(operation));
         }
 
-        private void InstantiateObstacle()
+        private AsyncOperation LoadAsync(string scene)
+        { 
+            AsyncOperation operation = SceneManager.LoadSceneAsync(scene);
+            operation.allowSceneActivation = false;
+            return operation;
+        }
+
+        private IEnumerator GameSceneLoad(AsyncOperation operation)
+        { 
+            while (!Resource.GameSceneLoad && operation.progress < 0.9f) yield return null;
+            while (!Input.GetMouseButtonDown(0)) yield return null;
+            operation.allowSceneActivation = true;
+        }
+
+        protected override void FixedUpdate()
         {
-            ServiceLocator.GetService<ObstacleManager>().SpawnObstacle();
+            SpawnDelay = 1f;
+            base.FixedUpdate();
         }
     }
 }

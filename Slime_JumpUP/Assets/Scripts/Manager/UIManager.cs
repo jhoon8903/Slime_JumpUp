@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Events;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
-using EventType = UI.EventType;
 
 namespace Manager
 {
@@ -54,7 +54,7 @@ namespace Manager
             return popup;
         }
 
-        public void ClosePopup(Popup popup, List<EventType> eventTypes)
+        public void ClosePopup(Popup popup, List<UIEventType> eventTypes)
         {
             _popupStack.Pop();
             UnbindPopupEvents(popup, eventTypes);
@@ -62,12 +62,12 @@ namespace Manager
             Utility.DestroyUI(popup);
         }
 
-        private void UnbindPopupEvents(Popup popup, List<EventType> eventTypes)
+        private void UnbindPopupEvents(Popup popup, List<UIEventType> eventTypes)
         {
-            EventsHandler[] eventsHandler = popup.GetComponents<EventsHandler>();
-            foreach (EventsHandler handler in eventsHandler)
+            UIEventsHandler[] eventsHandler = popup.GetComponents<UIEventsHandler>();
+            foreach (UIEventsHandler handler in eventsHandler)
             {
-                foreach (EventType eventType in eventTypes)
+                foreach (UIEventType eventType in eventTypes)
                 {
                     handler.UnbindEvent(eventType);
                 }

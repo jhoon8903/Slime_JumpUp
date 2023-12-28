@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8218757260070777411}
   - component: {fileID: 7336207177927683781}
   - component: {fileID: -6580827496658273342}
-  - component: {fileID: 3745151940178919453}
+  - component: {fileID: -5408419439093820787}
   m_Layer: 9
   m_Name: Stone_04
   m_TagString: Obstacle
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152874d328c74830a887d4c994bf89a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &3745151940178919453
+--- !u!54 &-5408419439093820787
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
