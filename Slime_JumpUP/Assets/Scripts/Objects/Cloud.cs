@@ -5,7 +5,7 @@ namespace Objects
 {
     public class Cloud : MonoBehaviour
     {
-        private const float Speed = 30f;
+        private const float Speed = 7f;
         private const float EndX = 15f;
 
         private void OnEnable()

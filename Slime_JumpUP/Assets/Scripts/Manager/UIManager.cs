@@ -27,6 +27,13 @@ namespace Manager
             }
         }
 
+        private ResourceManager _resource;
+
+        public void Initialize()
+        {
+            _resource = ServiceLocator.GetService<ResourceManager>();
+        }
+
         private string NameOfUI<T>(string uiName)
         {
             return string.IsNullOrEmpty(uiName) ? typeof(T).Name : uiName;
@@ -34,7 +41,7 @@ namespace Manager
 
         private T InstantiateUI<T>(string ui, Transform baseUITransform = null) where T : Component
         {
-            GameObject obj = ServiceLocator.GetService<ResourceManager>().InstantiateObject(ui, baseUITransform);
+            GameObject obj = _resource.InstantiateObject(ui, baseUITransform);
             return Utility.GetAddComponent<T>(obj);
         }
 

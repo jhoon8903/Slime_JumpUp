@@ -1,0 +1,162 @@
+{
+  "main": {
+    "id": "cd3cfd403a93e932",
+    "type": "split",
+    "children": [
+      {
+        "id": "3c36baa9b09e4e99",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "02c32441a68bf9ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fdaf68a6deb83f08",
+    "type": "split",
+    "children": [
+      {
+        "id": "bc3a221ac5ebfece",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "380bae8d1c753732",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d4791177fa587ad8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "96763391dbaea38d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "40f194930b843829",
+    "type": "split",
+    "children": [
+      {
+        "id": "d5f7027d1babca46",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4ffa3003bfbe6539",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6507797606caa867",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c75c17f19baea176",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "cb75005404ba7e30",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false
+    }
+  },
+  "active": "02c32441a68bf9ea",
+  "lastOpenFiles": [
+    "Slime_JumpUP/Temp/ADB-Refresh50c7ff76d4f0e4dbcb25c38745b4a327",
+    "Slime_JumpUP/Temp/ADB-Refresh2bb290d518d4c4b299566a1a77dea2f5",
+    "Slime_JumpUP/Temp/ADB-Refresh693dd368a92ac45c3b893df3072d6ddb",
+    "Slime_JumpUP/Temp/ADB-Refreshe2ca0e6131e26411cb2f8329e819507f",
+    "Slime_JumpUP/Temp/ADB-Refresh28213acb9ac644c2ab0b6dcdc250c691",
+    "Pasted image 20231229121444.png",
+    "Slime_JumpUP/Temp/ADB-Refresh5c7d620b3ed1a44b795b8dd378bb7848",
+    "Pasted image 20231229121340.png",
+    "Slime_JumpUP/Temp/ADB-Refresh097a023643ef14178b99cac9fb3235d6",
+    "Slime_JumpUP/Temp/ADB-Refreshd37d8fab18dff4076b00d1c4f00dbfbc"
+  ]
+}
