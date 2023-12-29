@@ -1,8 +1,4 @@
-using System;
 using System.Collections;
-using Manager;
-using UI;
-using UI.Interface;
 using UI.IntroScene;
 using UnityEngine;
 using UnityEngine.SceneManagement;

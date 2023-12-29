@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using Events;
 using Obstacles;
@@ -15,7 +14,7 @@ namespace UI.GameScene
         private TextMeshProUGUI _score;
         private TextMeshProUGUI _retryCount;
         private TextMeshProUGUI _bananaScore;
-        private GameObject _banana;
+        private Transform _banana;
         private Button _pauseBtn;
         private int _retry;
         private const float BananaSpinSpeed = 5f;
@@ -47,13 +46,15 @@ namespace UI.GameScene
 
         private void SetupObject()
         {
-            SetUI<GameObject>();
-            _banana = GetUI<GameObject>("Banana");
-            GameObject banana = ResourceManager.InstantiateObject("Banana", _banana.transform);
+            SetUI<Transform>();
+            _banana = GetUI<Transform>("Banana");
+            GameObject banana = ResourceManager.InstantiateObject("Banana", _banana);
             Banana bananaComponent = banana.GetComponent<Banana>();
+            BoxCollider bananaCollider = banana.GetComponent<BoxCollider>();
             Destroy(bananaComponent);
-            banana.transform.position = new Vector3(-210f, -90f, 0);
-            banana.transform.localScale = new Vector3(500f, 500f, 500f);
+            Destroy(bananaCollider);
+            banana.transform.localPosition = new Vector3(-216f, -80f, 0);
+            banana.transform.localScale = new Vector3(200f, 200f, 200f);
             RotateBanana(banana);
         }
 
@@ -77,7 +78,7 @@ namespace UI.GameScene
 
         private void UpdateScore(float score)
         {
-            _score.text = $"{score} M";
+            _score.text = $"{score:00.0} M";
         }
 
         private void UpdateRetry()

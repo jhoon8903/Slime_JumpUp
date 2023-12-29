@@ -23,7 +23,7 @@ namespace UI
             {
                 if (objectDict[key] != null) continue;
                 Object component = FindComponent<T>(parentObject, key);
-                if (component != null) objectDict[key] = component; 
+                if (component != null) objectDict[key] = component;
                 else  Debug.Log($"Binding failed for Object : {key}");
             }
             return objectDict;
