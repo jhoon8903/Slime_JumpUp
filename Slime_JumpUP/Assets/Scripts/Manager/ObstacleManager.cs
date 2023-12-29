@@ -16,6 +16,7 @@ namespace Manager
 
         private const float OverlapRadius = 0.8f;
         private GameObject _obstacle;
+        private ResourceManager _resource;
 
         public GameObject BaseObstacle
         {
@@ -24,6 +25,11 @@ namespace Manager
                 if (_obstacle == null) _obstacle = GameObject.Find("@Obstacle") ?? new GameObject("@Obstacle");
                 return _obstacle;
             }
+        }
+
+        public void Initialize()
+        {
+            _resource = ServiceLocator.GetService<ResourceManager>();
         }
 
         public void SpawnObstacle()
@@ -43,7 +49,8 @@ namespace Manager
 
         private Obstacle InstantiateObject(string name, Vector3 spawnPosition)
         {
-            GameObject obj = ServiceLocator.GetService<ResourceManager>().InstantiateObject(name, BaseObstacle.transform, pooling: true);
+            GameObject obj = _resource.InstantiateObject(name, BaseObstacle.transform, pooling: true);
+            if (obj == null) return null;
             obj.transform.position = spawnPosition;
             Obstacle obstacle = Utility.GetAddComponent<Obstacle>(obj);
             return obstacle;

@@ -12,7 +12,7 @@ namespace Scene
         protected ResourceManager Resource;
         protected UIManager UI;
         protected ScenesManager Scenes;
-        private ObstacleManager _obstacleManager;
+        protected ObstacleManager ObstacleManager;
         protected BackGround BackGround;
         private const string Label = "Preload";
         protected float SpawnDelay;
@@ -20,11 +20,7 @@ namespace Scene
 
         private void Awake()
         {
-            Resource = ServiceLocator.GetService<ResourceManager>();
-            UI = ServiceLocator.GetService<UIManager>();
-            Scenes = ServiceLocator.GetService<ScenesManager>();
-            BackGround = ServiceLocator.GetService<BackGround>();
-            _obstacleManager = ServiceLocator.GetService<ObstacleManager>();
+            ServiceRegister();
         }
 
         private void Start()
@@ -33,8 +29,22 @@ namespace Scene
             else LoadAssemble();
         }
 
+        private void ServiceRegister()
+        {
+            Resource = ServiceLocator.GetService<ResourceManager>();
+            UI = ServiceLocator.GetService<UIManager>();
+            Scenes = ServiceLocator.GetService<ScenesManager>();
+            BackGround = ServiceLocator.GetService<BackGround>();
+            ObstacleManager = ServiceLocator.GetService<ObstacleManager>();
+            BackGround.Initialize();
+            ObstacleManager.Initialize();
+            Resource.Initialize();
+            UI.Initialize();
+        }
+
         protected virtual void Initialize()
         {
+
             InstantiateEventSystem();
             InstantiateResolutionController();
         }
@@ -72,7 +82,7 @@ namespace Scene
 
         private void InstantiateObstacle()
         {
-            _obstacleManager.SpawnObstacle();
+            ObstacleManager.SpawnObstacle();
         }
     }
 }

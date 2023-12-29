@@ -16,6 +16,18 @@ namespace Manager
         public bool Preload { get; set; }
         public bool IntroSceneLoad { get; set; }
         public bool GameSceneLoad { get; set; }
+        private PoolManager _pool;
+        private SpriteLoader _spriteLoader;
+        private AtlasLoader _atlasLoader;
+        private ObjectLoader _objectLoader;
+        
+        public void Initialize()
+        {
+            _pool = ServiceLocator.GetService<PoolManager>();
+            _spriteLoader = ServiceLocator.GetService<SpriteLoader>();
+            _atlasLoader = ServiceLocator.GetService<AtlasLoader>();
+            _objectLoader = ServiceLocator.GetService<ObjectLoader>();
+        }
 
         public void AddResource(string key, Object resource)
         {
@@ -24,9 +36,9 @@ namespace Manager
 
         private IResourceLoader GetLoader(string key)
         {
-            if (key.EndsWith(".sprite")) return ServiceLocator.GetService<SpriteLoader>();
-            if (key.EndsWith(".atlas")) return ServiceLocator.GetService<AtlasLoader>();
-            return ServiceLocator.GetService<ObjectLoader>();
+            if (key.EndsWith(".sprite")) return _spriteLoader;
+            if (key.EndsWith(".atlas")) return _atlasLoader;
+            return _objectLoader;
         }
 
         public void AllLoadResource<T>(string label, Action<string, int, int> callback) where T : Object
@@ -66,7 +78,7 @@ namespace Manager
         public GameObject InstantiateObject(string key, Transform parent = null, bool pooling = false)
         {
             GameObject resource = Load<GameObject>($"{key}.prefab");
-            return pooling ? ServiceLocator.GetService<PoolManager>().Pop(resource) : Utility.InstantiateObject(resource, parent);
+            return pooling ? _pool.Pop(resource) : Utility.InstantiateObject(resource, parent);
         }
     }
 }

@@ -9,9 +9,13 @@ namespace UI.GameScene
     {
         private ResourceManager _resource;
 
-        public void InstantiateBackGround(string objectName, Transform parent)
+        public void Initialize()
         {
             _resource = ServiceLocator.GetService<ResourceManager>();
+        }
+
+        public void InstantiateBackGround(string objectName, Transform parent)
+        {
             GameObject background = _resource.InstantiateObject(objectName, parent);
             Transform backgroundTransform = background.transform;
             InstantiateSky(backgroundTransform);
