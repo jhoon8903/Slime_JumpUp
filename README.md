@@ -1,7 +1,7 @@
 # 🕴🏻 슬라임 점프 리팩토링 프로젝트
 
 - 과거 슬라임 점프 게임을 객체지향 및 좀 더 발전된 코드로 리팩토링 시도
-- 과거 게임 개발 자료 [링크]("https://github.com/jhoon8903/Unity_ClimbingGame") / [개발블로그]("https://jhoon8903.github.io/project/2023/05/04/%EA%B0%9C%EB%B0%9C%EC%99%84%EB%A3%8C.html")
+- 과거 게임 개발 자료 [링크](https://github.com/jhoon8903/Unity_ClimbingGame) / [개발블로그](https://jhoon8903.github.io/project/2023/05/04/%EA%B0%9C%EB%B0%9C%EC%99%84%EB%A3%8C.html)
 
 
 ## 🛠️ 리팩토링 내역
@@ -32,14 +32,14 @@
 
 ## 📝 개발 일지
 
-- [빌드 에러]("https://jhoon8903.github.io/unity/2023/12/29/BuildError.html")
-- [해상도 조절]("https://jhoon8903.github.io/unity/2023/12/28/WindowResolution.html")
-- [UI Manager Refactoring]("https://jhoon8903.github.io/unity/2023/12/27/UIManagerRefactoring.html")
-- [Object Pooling]("https://jhoon8903.github.io/unity/2023/12/26/Object-Pool.html")
-- [Rag doll]("https://jhoon8903.github.io/unity/2023/12/25/Joint.html")
+- [빌드 에러](https://jhoon8903.github.io/unity/2023/12/29/BuildError.html)
+- [해상도 조절](https://jhoon8903.github.io/unity/2023/12/28/WindowResolution.html)
+- [UI Manager Refactoring](https://jhoon8903.github.io/unity/2023/12/27/UIManagerRefactoring.html)
+- [Object Pooling](https://jhoon8903.github.io/unity/2023/12/26/Object-Pool.html)
+- [Rag doll](https://jhoon8903.github.io/unity/2023/12/25/Joint.html)
 - [Service Locator](https://jhoon8903.github.io/unity/2023/12/24/ServiceLocator2.html)
-- [Allocation Warning]("https://jhoon8903.github.io/unity/2023/12/23/UnityError.html")
-- [Git LFS]("https://jhoon8903.github.io/github/2023/12/22/Git-LFS.html")
+- [Allocation Warning](https://jhoon8903.github.io/unity/2023/12/23/UnityError.html)
+- [Git LFS](https://jhoon8903.github.io/github/2023/12/22/Git-LFS.html)
 
 
 ### 🖍️ 관계  Diagram
