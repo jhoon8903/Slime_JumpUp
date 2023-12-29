@@ -18,7 +18,7 @@
 ## 🐞 확인된 버그 내역 (23.12.29)
 
 - ~~UI 바인딩 시 GameObject 를 바인딩 하지 못하는 문제~~
-- 빌드시에 발생하는 GameScene Resource Load Skip
+- ~~빌드시에 발생하는 GameScene Resource Load Skip~~
 - 이미 사라진 장애물에 Access 하는 문제
 - Character Joint 떨림 및 스트래치 되는 현상
 
