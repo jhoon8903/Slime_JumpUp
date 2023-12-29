@@ -36,7 +36,7 @@ namespace UI.GameScene
         public void InstantiateCloud(Transform parent)
         {
             GameObject cloud = _resource.InstantiateObject("CloudWhite", parent);
-            cloud.transform.localPosition = new Vector3(3.2f, -5.4f, 0f);
+            cloud.transform.localPosition = new Vector3(3f, -5f, 0f);
             cloud.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         }
     }
