@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Events;
-using UI;
 using UnityEngine;
 using UnityEngine.UI;
+using UserInterface;
 
 namespace Manager
 {
