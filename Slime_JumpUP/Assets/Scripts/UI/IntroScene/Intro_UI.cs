@@ -1,39 +1,53 @@
 using DG.Tweening;
-using Manager;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace UI.IntroScene
 {
     public class Intro_UI : UIBase
     {
-        private enum Texts { StartText }
         private TextMeshProUGUI _startText;
+        private Image _fill;
+        private int _maxCount;
         private const float Duration = 2f;
 
-        private void Start()
+        protected override void Initialized()
         {
-            Initialized();
+            base.Initialized();
+            SetUpText();
+            SetupImage();
         }
 
-        private void Initialized()
+        private void SetUpText()
         {
-            SetText(typeof(Texts));
-            _startText = GetText((int)Texts.StartText);
-            gameObject.SetEvent(EventType.Click, IntoTheGame);
+            SetUI<TextMeshProUGUI>();
+            _startText = GetUI<TextMeshProUGUI>("StartText");
             ChangedTextColor();
         }
 
-        private void IntoTheGame(PointerEventData obj)
+        private void SetupImage()
         {
-            const string nextScene = "GameScene";
-            ServiceLocator.GetService<ScenesManager>().LoadToScene(nextScene);
+            SetUI<Image>();
+            _fill = GetUI<Image>("Fill");
+            _fill.fillAmount = 0f;
         }
 
-        private void ChangedTextColor()
+        public void UpdateToProgress(int count, int totalCount, string key)
         {
-            _startText.DOColor(Color.black, Duration).SetLoops(-1, LoopType.Yoyo);
+            if (count == 0 && key == null) return;
+            if (count == _maxCount) key = "Touch Your Screen";
+            UpdateProgressBar(count, totalCount);
+            UpdateText(key);
         }
+
+        private void UpdateProgressBar(int count, int totalCount)
+        {
+            _maxCount = totalCount > _maxCount ? totalCount : _maxCount;
+            _fill.fillAmount = (float)count / _maxCount;
+            if (_fill.fillAmount >= 1f)  _maxCount = 0;
+        }
+        private void UpdateText(string key) => _startText.text = key;
+        private void ChangedTextColor() =>  _startText.DOColor(Color.black, Duration).SetLoops(-1, LoopType.Yoyo);
     }
 }

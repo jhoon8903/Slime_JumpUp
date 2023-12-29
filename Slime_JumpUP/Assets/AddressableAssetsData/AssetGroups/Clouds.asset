@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Clouds
+  m_EditorClassIdentifier: 
+  m_GroupName: Clouds
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 7b63847de5e97419d82d34353d5051e3
+  m_SerializeEntries:
+  - m_GUID: b5d193c8bf3f77c44a78e0500be441f1
+    m_Address: CloudGreen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ef26569aff552e44bc66439475e6173
+    m_Address: CloudOrange.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18885cb5dde66b442ac0643705a9c3de
+    m_Address: CloudPurple.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57b77098dec394c44b198f171f667f93
+    m_Address: CloudWhite.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5a9f1c2e0acca496cbd2d014ad327ec0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7b59eff491f0e4c129dfbb96cc0d13b9, type: 2}
+    - {fileID: 11400000, guid: d2385f6d0beaf4d13bec8eea95325b38, type: 2}

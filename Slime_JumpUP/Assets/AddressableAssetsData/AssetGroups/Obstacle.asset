@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Obstacle
+  m_EditorClassIdentifier: 
+  m_GroupName: Obstacle
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 2172a86c7453c40128755ae091b89c7c
+  m_SerializeEntries:
+  - m_GUID: de59d24da39360f4cae7dc9021b0e246
+    m_Address: Stone_01.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52b7506bf34b1404d8fb8a8428349b3a
+    m_Address: Stone_02.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b48a048678df7b48bb1d88a55bf2dd2
+    m_Address: Stone_03.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2f21317d62613d64394544e5667c3d29
+    m_Address: Stone_04.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51fff08c4e9b7d4439298fc1af42d7fb
+    m_Address: Stone_05.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 66d50f3f51f2d4ecbb8bffcd1ea188e1
+    m_Address: Banana.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5a9f1c2e0acca496cbd2d014ad327ec0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 16cd1927b811f4670905c167b38bfc02, type: 2}
+    - {fileID: 11400000, guid: 015365d0afa6e40e7aa0d97ced97e925, type: 2}

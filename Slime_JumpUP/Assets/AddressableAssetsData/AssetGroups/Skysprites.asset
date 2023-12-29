@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Skysprites
+  m_EditorClassIdentifier: 
+  m_GroupName: Skysprites
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4d0834f2ec89143e28af82a3eed6c79b
+  m_SerializeEntries:
+  - m_GUID: 31b1dda59ccbf944ab2fbe5716a21139
+    m_Address: DayGreen.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7897c560985a8e149b6b941bf321eebf
+    m_Address: DayPink.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3169b7d20c0000c4984b0360faf124e6
+    m_Address: DayPurple.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 753fa8df9d7ea0947b9784a1dbe0991f
+    m_Address: DayWhite.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e68a8e6c0629905438781cbee46a8a44
+    m_Address: NightGreen.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee1b52837f6a5834aba60a7414187296
+    m_Address: NightPurple.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d306e0dec795b84a9eaf829d787987c
+    m_Address: NightRed.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8153718f86cabb94dae85b3b240799a3
+    m_Address: NightWhite.sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5a9f1c2e0acca496cbd2d014ad327ec0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 56c278e32c8eb4af7a20f58c317335b4, type: 2}
+    - {fileID: 11400000, guid: 7b9da15dca9004ed1a88039ec0d87e57, type: 2}

@@ -6,69 +6,43 @@ using Object = UnityEngine.Object;
 
 namespace UI
 {
-    public class Binder
-    {
-        public static void Binding<T>(GameObject parentObject, Type type, Dictionary<Type, Object[]> objectDictionary) where T : Object
+    public static class Binder
+    {       
+        private static readonly Dictionary<Type, Dictionary<string, Object>> Objects = new();
+
+        public static void Binding<T>(GameObject parentObject) where T : Object
         {
-            string[] names = Enum.GetNames(type);
-            Object[] objects = new Object[names.Length];
-            objectDictionary.Add(typeof(T), objects);
-            AssignmentComponent<T>(parentObject, names, objects);
+            T[] components = parentObject.GetComponentsInChildren<T>(true);
+            Dictionary<string, Object> objectDict = components.ToDictionary(comp => comp.name, comp => comp as Object);
+            Objects[typeof(T)] = AssignmentComponent<T>(parentObject, objectDict);
         }
 
-        private static void AssignmentComponent<T>(GameObject parentObject, IReadOnlyList<string> names, IList<Object> objects) where T : Object
+        private static Dictionary<string, Object> AssignmentComponent<T>(GameObject parentObject, Dictionary<string, Object> objectDict) where T : Object
         {
-            for (int i = 0; i < names.Count; i++)
+            foreach (var key in objectDict.Keys.ToList())
             {
-                if (typeof(T) == typeof(GameObject))
-                {
-                    objects[i] = FindComponent(parentObject, names[i], true);
-                }
-                else
-                {
-                    objects[i] = FindComponent<T>(parentObject, names[i], true);
-                }
-                if (objects[i] == null) Debug.Log($"바인드 실패 : {names[i]}");
+                if (objectDict[key] != null) continue;
+                Object component = FindComponent<T>(parentObject, key);
+                if (component != null) objectDict[key] = component; 
+                else  Debug.Log($"Binding failed for Object : {key}");
             }
+            return objectDict;
         }
 
-        private static GameObject FindComponent(GameObject parentObject, string name = null, bool recursive = false)
+        private static T FindComponent<T>(GameObject parentObject, string name) where T : Object
         {
-            Transform transform = FindComponent<Transform>(parentObject, name, recursive);
-            return transform == null ? null : transform.gameObject;
-        }
-
-        private static T FindComponent<T>(GameObject parentObject, string name, bool recursive) where T : Object
-        {
-            if (parentObject == null) return null;
-
-            return recursive 
-                ? FindComponentRecursive<T>(parentObject, name)
-                : FindComponentNonRecursive<T>(parentObject, name);
-        }
-
-        private static T FindComponentNonRecursive<T>(GameObject parentObject, string name) where T : Object
-        {
-            for (int i = 0; i < parentObject.transform.childCount; i++)
+            foreach (Transform child in parentObject.transform)
             {
-                Transform child = parentObject.transform.GetChild(i);
-                if (!string.IsNullOrEmpty(name) && child.name != name) continue;
-                T component = child.GetComponent<T>();
-                if (component != null) return component;
+                if (child.name == name) return child.GetComponent<T>();
             }
             return null;
         }
 
-        private static T FindComponentRecursive<T>(GameObject parentObject, string name) where T : Object
+        public static T Getter<T>(string componentName) where T : Object
         {
-            var components = parentObject.GetComponentsInChildren<T>();
-            return components.FirstOrDefault(component => string.IsNullOrEmpty(name) || component.name == name);
-        }
-
-        public static T Getter<T>(int componentIndex, Dictionary<Type, Object[]> objectsDictionary) where T : Object
-        {
-            if (!objectsDictionary.TryGetValue(typeof(T), out Object[] objects)) return null;
-            return objects[componentIndex] as T;
+            if (!Objects.TryGetValue(typeof(T), out var components)) return null;
+            if (components.TryGetValue(componentName, out var component)) return component as T;
+            return null;
         }
     }
 }

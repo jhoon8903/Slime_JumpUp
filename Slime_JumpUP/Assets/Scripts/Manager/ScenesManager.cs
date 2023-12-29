@@ -6,7 +6,7 @@ namespace Manager
 {
     public class ScenesManager
     {
-        public static string NextScene { get; set; }
+        public string NextScene { get; set; }
 
         private GameObject _baseObjects;
         public GameObject BaseObjects
@@ -19,12 +19,6 @@ namespace Manager
                 }
                 return _baseObjects;
             }
-        }
-
-        public void LoadToScene(string nextScene)
-        {
-            NextScene = nextScene;
-            SceneManager.LoadScene("LoadingScene");
         }
     }
 }

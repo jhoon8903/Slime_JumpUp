@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Moons
+  m_EditorClassIdentifier: 
+  m_GroupName: Moons
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b1518e95feb2842beb52a6d7e646f0c3
+  m_SerializeEntries:
+  - m_GUID: 2dd530615b97d4b408cb7b740953c9a9
+    m_Address: MoonGreen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42f09ac2300dec444a5bbe67fcd866a6
+    m_Address: MoonPink.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17c603991ff9ddc4a9e81af14cccf0f7
+    m_Address: MoonRed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af1dc7a699400cd42bc0e0f1449212e4
+    m_Address: MoonWhite.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5a9f1c2e0acca496cbd2d014ad327ec0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b2e432af60df54a159270d0ec1e6318c, type: 2}
+    - {fileID: 11400000, guid: 8d3b816919dc24786a3dd72fbec48466, type: 2}

@@ -8,7 +8,7 @@ namespace Objects
         private const float Speed = 20f;
         private const float EndX = 10f;
 
-        private void Start()
+        private void OnEnable()
         {
             MoveToCloud();
         }

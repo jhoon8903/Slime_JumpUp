@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Suns
+  m_EditorClassIdentifier: 
+  m_GroupName: Suns
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d38bab238579d47828cc0676b29f9145
+  m_SerializeEntries:
+  - m_GUID: ce06b74c583734f43b4307ad99da5d36
+    m_Address: SunDark.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 644b28a97db2dfa43906a93b9be9d5c6
+    m_Address: SunOrange.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92525cfeb7557c54f91975916a648ff6
+    m_Address: SunPink.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameScene
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9625b076f9a8c114497f91946a0fe08b
+    m_Address: SunWhite.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5a9f1c2e0acca496cbd2d014ad327ec0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 200781f2d88d044d682730516220a053, type: 2}
+    - {fileID: 11400000, guid: 0aba50f24326248d5b1b6c3fcc6a12ab, type: 2}

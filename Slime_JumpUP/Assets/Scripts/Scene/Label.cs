@@ -2,6 +2,6 @@ namespace Scene
 {
     public enum Label
     {
-        IntroScene, LoadingScene, GameScene
+        IntroScene, GameScene
     }
 }
